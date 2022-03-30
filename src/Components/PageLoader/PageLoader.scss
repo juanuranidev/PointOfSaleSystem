@@ -1,0 +1,14 @@
+.pageLoader{
+    border: 1rem solid #DBE2EF;
+    border-radius: 50%;
+    border-top: 16px solid #3F72AF;
+    width: 5rem;
+    height: 5rem;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+@keyframes spin{
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}  
