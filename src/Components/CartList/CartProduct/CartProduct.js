@@ -5,20 +5,20 @@ import './CartProduct.scss';
 const CartProduct = ({cart, setCart}) => {
 
     const handleRemoveItem = (product) => {
-      const productToDelete = cart.find(x => x._id === product._id)
-      setCart(cart.filter(x => x._id !== productToDelete._id))
+      const productToDelete = cart.find(item => item._id === product._id)
+      setCart(cart.filter(item => item._id !== productToDelete._id))
     }
     
     const handleIncrement = (product) => {
-      const target = cart.find(x => x._id === product._id)
-      target.quantity !== product.stock && setCart(cart.map(x => x._id === product._id ? { ...product, quantity: product.quantity + 1 }: x))
+      const target = cart.find(item => item._id === product._id)
+      target.quantity !== product.stock && setCart(cart.map(item => item._id === product._id ? { ...product, quantity: product.quantity + 1 }: item))
     }
     
     const handleDecrement = (product) => {
-      const target = cart.find(x => x._id === product._id)
+      const target = cart.find(item => item._id === product._id)
       target.quantity === 1
-      ? setCart(cart.filter(x => x._id !== product._id))
-      : setCart(cart.map(x => x._id === product._id ? { ...product, quantity: product.quantity - 1 }: x))
+      ? setCart(cart.filter(item => item._id !== product._id))
+      : setCart(cart.map(item => item._id === product._id ? { ...product, quantity: product.quantity - 1 }: item))
     }
 
   return (

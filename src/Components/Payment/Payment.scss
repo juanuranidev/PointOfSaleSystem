@@ -8,6 +8,25 @@
     background-color: #DBE2EF;
     box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
     transform: translate(-50%, -50%);
+    .payment_button{
+        padding: 1rem 2rem;
+        margin: 2rem auto;
+        display: flex;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        background-color: #3F72AF;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+    }
+    .payment_button:hover{
+        background-color: #112D4E;
+    }
+    .payment_button:active{
+        transform: scale(.95);
+    }
     .payment_div{
         display: flex;
         flex-direction: column;

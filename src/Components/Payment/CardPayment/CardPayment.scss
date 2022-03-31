@@ -1,0 +1,46 @@
+.cardPayment{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    .cardPayment_form{
+        display: flex;
+        flex-direction: column;
+        width: 25rem;
+        .cardPayment_form_h2{
+            font-size: 2rem;
+            margin: 1.5rem 0rem;
+            text-align: center;
+        }
+        .cardPayment_form_label{
+            margin-bottom: 0.5rem;
+        }
+        .cardPayment_form_input{
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            height: 2rem;
+            padding: 0rem 0.5rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
+        }
+        .cardPayment_form_button{
+            padding: 1rem 0rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            background-color: #3F72AF;
+            transition: all 0.1s ease-in-out;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
+            cursor: pointer;
+        }
+        .cardPayment_form_button:hover{
+            background-color: #112D4E;
+        }
+        .cardPayment_form_button:active{
+            transform: scale(.95);
+        }
+    }   
+}
