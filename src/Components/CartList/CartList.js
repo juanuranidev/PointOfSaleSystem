@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import CartProduct from './CartProduct/CartProduct';
 import './CartList.scss';
 
-const CartList = ({cart, setCart, setPayment}) => {
-  const [cartTotal, setCartTotal] = useState()
+const CartList = ({cart, setCart, cartTotal}) => {
 
-  useEffect(() => {
-    let cartTotal = 0
-    let productTotal = 0
-  
-    cart.forEach(product => {
-        let productPrice = product.price.replace("$", "")
-        productTotal = product.quantity * Number(productPrice)
-        cartTotal += productTotal
-      })
-      setCartTotal(cartTotal)
-  }, [cart])
   
 
   return (
@@ -29,7 +18,7 @@ const CartList = ({cart, setCart, setPayment}) => {
       </div>
       <div className='cartList_sell'>
         {cart.length > 0
-        ? <button className="cartList_sell_button" onClick={() => setPayment(true)}>Vender</button>
+        ? <Link to="/payment"><button className="cartList_sell_button">Vender</button></Link>
         : <button className="cartList_sell_button disabled" disabled>No hay productos</button>}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './CardPayment.scss';
 
 const CardPayment = () => {
@@ -35,6 +36,7 @@ const CardPayment = () => {
 
   return (
     <div className='cardPayment'>
+      <Link to="/payment"><button className='cardPayment_button'>Volver</button></Link>
       <form className='cardPayment_form' onSubmit={(e) => handleSubmit(e)}>
         <h2 className='cardPayment_form_h2'>Datos del comprador</h2>
         <label className='cardPayment_form_label'>Nombre</label>
