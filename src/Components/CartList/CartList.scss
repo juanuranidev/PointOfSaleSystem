@@ -23,24 +23,29 @@
         height: 10%;
         display: flex;
         width: 100%;
-        .cartList_sell_button{
+        .cartList_sell_a{
+            text-decoration: none;
             width: 100%;
-            height: 70%;
-            font-size: 1rem;
-            border: none;
-            font-weight: bold;
-            border-radius: 0.5rem;
-            color: white;
-            background-color: #3F72AF;
-            transition: all 0.1s ease-in-out;
-            cursor: pointer;
+            .cartList_sell_a_button{
+                width: 100%;
+                height: 70%;
+                font-size: 1rem;
+                border: none;
+                font-weight: bold;
+                border-radius: 0.5rem;
+                color: white;
+                background-color: #3F72AF;
+                transition: all 0.1s ease-in-out;
+                cursor: pointer;
+            }
+            .cartList_sell_a_button:hover{
+                background-color: #112D4E;
+            }
+            .cartList_sell_a_button:active{
+                transform: scale(.95);
+            }
         }
-        .cartList_sell_button:hover{
-            background-color: #112D4E;
-        }
-        .cartList_sell_button:active{
-            transform: scale(.95);
-        }
+       
     }
     .disabled{
         opacity: 0.5;

@@ -6,14 +6,14 @@ import './CartList.scss';
 const CartList = ({cart, setCart, cartTotal, setCartTotal}) => {
 
   useEffect(() => {
-    let cartTotal = 0
+    let cartPriceTotal = 0
     let productTotal = 0
     cart.forEach(product => {
         let productPrice = product.price.replace("$", "")
         productTotal = product.quantity * Number(productPrice)
-        cartTotal += productTotal
+        cartPriceTotal += productTotal
       })
-      setCartTotal(cartTotal)
+      setCartTotal(cartPriceTotal)
   }, [cart])
 
   return (
@@ -23,11 +23,11 @@ const CartList = ({cart, setCart, cartTotal, setCartTotal}) => {
         <CartProduct cart={cart} setCart={setCart} />
       </div>
       <div className='cartList_total'>
-        {cart.length > 0 && <p className='cartList_total_p'>TOTAL: ${cartTotal.toLocaleString("en")}</p>}
+        {cart.length > 0 && <p className='cartList_total_p'>TOTAL: ${cartTotal.toLocaleString("ar")}</p>}
       </div>
-      <div className='cartList_sell'>
+      <div className='cartList_sell'> 
         {cart.length > 0
-        ? <Link to="/payment"><button className="cartList_sell_button">Vender</button></Link>
+        ? <Link className="cartList_sell_a" to="/payment"><button className="cartList_sell_a_button">Vender</button></Link>
         : <button className="cartList_sell_button disabled" disabled>No hay productos</button>}
       </div>
     </div>
