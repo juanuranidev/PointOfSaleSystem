@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CartProduct from './CartProduct/CartProduct';
 import './CartList.scss';
 
-const CartList = ({cart, setCart, cartTotal}) => {
+const CartList = ({cart, setCart, cartTotal, setCartTotal}) => {
 
-  
+  useEffect(() => {
+    let cartTotal = 0
+    let productTotal = 0
+    cart.forEach(product => {
+        let productPrice = product.price.replace("$", "")
+        productTotal = product.quantity * Number(productPrice)
+        cartTotal += productTotal
+      })
+      setCartTotal(cartTotal)
+  }, [cart])
 
   return (
     <div className='cartList'>
