@@ -1,4 +1,4 @@
-.cardPayment{
+.cashPayment{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -6,19 +6,19 @@
     width: 100%;
     min-height: 100vh;
     background-color: #DBE2EF;
-    .cardPayment_back{
+    .cashPayment_back{
         display: flex;
         justify-content: flex-start;
         width: 100%;
         @media(max-width: 576px){
             justify-content: center;
         }
-        .cardPayment_back_a{
+        .cashPayment_back_a{
             margin: 2rem 0rem 0rem 2rem;
             @media(max-width: 576px){
                 margin: 2rem 0rem 0rem 0rem;
             }
-            .cardPayment_back_a_button{
+            .cashPayment_back_a_button{
                 padding: 1rem 2rem;
                 font-size: 1rem;
                 font-weight: bold;
@@ -29,22 +29,22 @@
                 transition: all 0.1s ease-in-out;
                 cursor: pointer;
             }   
-            .cardPayment_back_a_button:hover{
+            .cashPayment_back_a_button:hover{
                 background-color: #112D4E;
             }
-            .cardPayment_back_a_button:active{
+            .cashPayment_back_a_button:active{
                 transform: scale(.95);
             }
         }
     }
-    .cardPayment_form{
+    .cashPayment_form{
         display: flex;
         flex-direction: column;
         width: 25rem;
         @media(max-width: 576px){
             width: 80%;
         }
-        .cardPayment_form_h2{
+        .cashPayment_form_h2{
             font-size: 2rem;
             margin: 1.5rem 0rem;
             text-align: center;
@@ -52,10 +52,10 @@
                 font-size: 1.5rem;
             }
         }
-        .cardPayment_form_label{
+        .cashPayment_form_label{
             margin-bottom: 0.5rem;
         }
-        .cardPayment_form_input{
+        .cashPayment_form_input{
             margin-bottom: 1rem;
             border: none;
             border-radius: 0.25rem;
@@ -63,8 +63,8 @@
             padding: 0rem 0.5rem;
             box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
         }
-        .cardPayment_form_button{
-            margin: 2rem 0rem;
+        .cashPayment_form_button{
+            margin-top: 2rem;
             padding: 1rem 0rem;
             font-size: 1rem;
             font-weight: bold;
@@ -76,10 +76,10 @@
             box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
             cursor: pointer;
         }
-        .cardPayment_form_button:hover{
+        .cashPayment_form_button:hover{
             background-color: #112D4E;
         }
-        .cardPayment_form_button:active{
+        .cashPayment_form_button:active{
             transform: scale(.95);
         }
         .disabled{

@@ -10,17 +10,29 @@ function App() {
   const [cart, setCart] = useState([])
   const [cartTotal, setCartTotal] = useState()
 
+  useEffect(() => {
+    // Get total price of the cart
+    let cartPriceTotal = 0
+    let productTotal = 0
+    cart.forEach(product => {
+        let productPrice = product.price.replace("$", "")
+        productTotal = product.quantity * Number(productPrice)
+        cartPriceTotal += productTotal
+      })
+      setCartTotal(cartPriceTotal)
+  }, [cart])
+
   return (
-    <div className="app">
+    <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main cart={cart} setCart={setCart} cartTotal={cartTotal} setCartTotal={setCartTotal} />} />
+          <Route path="/" element={<Main cart={cart} setCart={setCart} cartTotal={cartTotal} />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/payment/card" element={<CardPayment cart={cart} setCart={setCart} />} />
-          <Route path="/payment/cash" element={<CashPayment cart={cart} setCart={setCart} />} />
+          <Route path="/payment/card" element={<CardPayment cart={cart} setCart={setCart} cartTotal={cartTotal} />} />
+          <Route path="/payment/cash" element={<CashPayment cart={cart} setCart={setCart} cartTotal={cartTotal} />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

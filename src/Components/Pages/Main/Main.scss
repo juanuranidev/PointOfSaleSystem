@@ -1,0 +1,23 @@
+.main{
+    display: flex;
+    overflow-y: hidden;
+    height: 100vh;
+    .main_menu{
+        display: none;
+        justify-content: center;
+        padding: 1rem;
+        width: 100%;
+        top: 0%;
+        right: 0%;
+        z-index: 1;
+        position: absolute;
+        background-color: #3F72AF;
+        transition: all 1s ease-in-out;
+        @media(max-width: 992px){
+            display: flex;
+        }
+        .main_menu_img{
+            width: 2.5rem;
+        }
+    }
+}
