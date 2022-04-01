@@ -1,9 +1,10 @@
 import React from 'react';
 import './Products.scss';
 
-const Product = ({products, cart, setCart}) => {
+const Product = ({products, cart, setCart, setOpenMenu}) => {
 
     const handleAddToCart = (product) => {
+        setOpenMenu(true)
         const isInCart = cart.find((x => x._id === product._id))
         if(isInCart){
             const NewCart = cart.map((x) => {

@@ -4,7 +4,7 @@ import PageLoader from "../PageLoader/PageLoader";
 import Product from "./Product/Product";
 import './Products.scss';
 
-const Products = ({cart, setCart}) => {
+const Products = ({cart, setCart, setOpenMenu}) => {
     const [products, setProducts] = useState([])
     const [loader, setLoader] = useState(true)
 
@@ -18,7 +18,7 @@ const Products = ({cart, setCart}) => {
         <section className="products">
             {loader
             ? <PageLoader/>
-            : <Product products={products} cart={cart} setCart={setCart}/>}
+            : <Product products={products} cart={cart} setCart={setCart} setOpenMenu={setOpenMenu} />}
         </section>
   );
 }

@@ -11,8 +11,8 @@ const Main = ({cart, setCart, cartTotal}) => {
       <div className="main_menu">
         <img className='main_menu_img' src={Menu} onClick={() => setOpenMenu(true)} />
       </div>
-      <Products cart={cart} setCart={setCart} />
-      <CartList cart={cart} setCart={setCart} openMenu={openMenu} setOpenMenu={setOpenMenu} cartTotal={cartTotal}/>
+      <Products cart={cart} setCart={setCart} setOpenMenu={setOpenMenu} />
+      <CartList cart={cart} setCart={setCart} openMenu={openMenu} setOpenMenu={setOpenMenu} cartTotal={cartTotal} />
     </div>
   );
 }
