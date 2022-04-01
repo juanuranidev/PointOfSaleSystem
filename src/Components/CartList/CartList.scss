@@ -2,8 +2,9 @@
     width: 30rem;
     height: 100vh;
     background-color: #DBE2EF;
-    padding: 1rem;
+    padding: 0rem 1rem;
     z-index: 2;
+    transition: all 0.8s ease-in-out;
     box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
     @media(max-width: 992px){
         position: fixed;
@@ -34,6 +35,7 @@
         overflow-y: scroll;
     }
     .cartList_total{
+        border-top: 1px solid #000000;
         height: 5%;
         display: flex;
         align-items: center;
@@ -42,15 +44,17 @@
         }
     }
     .cartList_sell{
-        height: 10%;
+        height: 8%;
         display: flex;
         width: 100%;
         .cartList_sell_a{
             text-decoration: none;
             width: 100%;
+            height: 100%;  
+            margin-bottom: 1rem;      
             .cartList_sell_a_button{
                 width: 100%;
-                height: 70%;
+                height: 100%;
                 font-size: 1rem;
                 border: none;
                 font-weight: bold;
@@ -84,4 +88,5 @@
 }
 .active{
     right: 0%;
+    transition: all 0.8s ease-in-out;
 }
