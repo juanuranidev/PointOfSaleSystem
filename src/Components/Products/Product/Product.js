@@ -1,4 +1,5 @@
 import React from 'react';
+import { addedToCart, noStock } from '../../Notifications/Notifications'
 import './Products.scss';
 
 const Product = ({products, cart, setCart, setOpenMenu}) => {
@@ -10,7 +11,7 @@ const Product = ({products, cart, setCart, setOpenMenu}) => {
             const NewCart = cart.map((x) => {
                 if (x._id === product._id) {
                     if(x.quantity === product.stock){
-                        alert("No hay más stock del producto")
+                        noStock()
                     } else {
                         return { ...product, quantity: x.quantity + 1}
                     }
@@ -20,6 +21,7 @@ const Product = ({products, cart, setCart, setOpenMenu}) => {
             setCart(NewCart)
         } else {
             setCart([...cart, {...product, quantity: 1}])
+            addedToCart()
         }
     }
 
@@ -33,7 +35,7 @@ const Product = ({products, cart, setCart, setOpenMenu}) => {
                 <p className="product_div_p">{product.price}</p>
                 {product.stock > 0
                 ? <button className="product_div_button" onClick={() => handleAddToCart(product)}>Agregar</button>
-                : <button className="product_div_button" disabled>Sin stock</button>}
+                : <button className="product_div_button" onClick={() => noStock()}>Sin stock</button>}
             </div>
         </div>)}
     </>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { successfulPurchase, errorPurchase } from '../../Notifications/Notifications';
 import axios from 'axios';
 import './CardPayment.scss';
 
@@ -41,10 +42,10 @@ const CardPayment = ({cart, setCart, cartTotal}) => {
       cart: cart,
       cartTotal: cartTotal
     }).then(() => {
-      alert("Compra realizada correctamente")
-
+      successfulPurchase()
     }).catch(err => {
       console.log(err)
+      errorPurchase()
 
     }).finally(() => {
       navigate('/', { replace: true })

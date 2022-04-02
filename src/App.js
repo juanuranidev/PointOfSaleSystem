@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import Main from "./Components/Pages/Main/Main";
 import Payment from "./Components/Pages/Payment/Payment";
 import CardPayment from "./Components/Pages/CardPayment/CardPayment";
 import CashPayment from "./Components/Pages/CashPayment/CashPayment";
+import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 
 function App() {
@@ -24,6 +26,18 @@ function App() {
 
   return (
     <>
+      <ToastContainer 
+        position="bottom-left"
+        theme="colored"
+        limit={3}
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main cart={cart} setCart={setCart} cartTotal={cartTotal} />} />

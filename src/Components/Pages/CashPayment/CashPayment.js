@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { successfulPurchase, errorPurchase } from '../../Notifications/Notifications';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import './CashPayment.scss'
 
 const CashPayment = ({cart, setCart, cartTotal}) => {
+  const clientChange = () => toast.success(`El vuelto es de $${(formData.montoPagado - cartTotal).toLocaleString("ar")}`)
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nombre: '',
@@ -29,12 +32,11 @@ const CashPayment = ({cart, setCart, cartTotal}) => {
       cart: cart,
       cartTotal: cartTotal
     }).then((res) => {
-      alert("Compra realizada correctamente")
-      console.log(res)
-      console.log(`El vuelto es de $${(formData.montoPagado - cartTotal).toLocaleString("ar")}`)
+      successfulPurchase()
+      clientChange()
     }).catch(err => {
       console.log(err)
-
+      errorPurchase()
     }).finally(() => {
       navigate('/', { replace: true })
       setCart([])
