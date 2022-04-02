@@ -11,14 +11,15 @@ const Products = ({cart, setCart, setOpenMenu}) => {
     useEffect(() => {
       axios.get(`https://ait-tesapi.herokuapp.com/products`)
       .then(res => setProducts(res.data.products))
+      .catch(err => console.log(err))
       .finally(() => setLoader(false))
     }, [])
     
     return (
         <section className="products">
-            {loader
-            ? <PageLoader/>
-            : <Product products={products} cart={cart} setCart={setCart} setOpenMenu={setOpenMenu} />}
+          {loader
+          ? <PageLoader/>
+          : <Product products={products} cart={cart} setCart={setCart} setOpenMenu={setOpenMenu} />}
         </section>
   );
 }

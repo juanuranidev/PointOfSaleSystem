@@ -23,8 +23,8 @@ const CashPayment = ({cart, setCart, cartTotal}) => {
   const handleChange = (e) => setFormData({ ...formData, [e.target.name] : e.target.value })
 
   const handleSubmit = (e) => {
-    
     e.preventDefault()
+    
     axios({
       url: "https://ait-tesapi.herokuapp.com/sales/",
       method: "POST",
