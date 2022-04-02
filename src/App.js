@@ -30,7 +30,7 @@ function App() {
         position="bottom-left"
         theme="colored"
         limit={3}
-        autoClose={4000}
+        autoClose={3500}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
