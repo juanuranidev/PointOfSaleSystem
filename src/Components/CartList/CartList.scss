@@ -1,24 +1,24 @@
 .cartList{
-    width: 30rem;
-    height: 100vh;
+    width: 35rem;
+    height: 100%;
     background-color: #DBE2EF;
-    padding: 0rem 1rem;
     z-index: 2;
     transition: all 0.8s ease-in-out;
     box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
     @media(max-width: 992px){
         position: fixed;
         right: -100%;
-        width: 20rem;
+        width: 25rem;
     }
     @media(max-width: 576px){
-        width: 90%;
+        width: 100%;
     }
     .cartList_title{
         height: 5%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0rem 1rem;
         .cartList_title_h1{
             font-size: 1.5rem;
         }
@@ -39,6 +39,7 @@
         height: 5%;
         display: flex;
         align-items: center;
+        margin: 0rem 1rem;
         .cartList_total_p{
             font-weight: 700;
         }
@@ -46,7 +47,8 @@
     .cartList_sell{
         height: 8%;
         display: flex;
-        width: 100%;
+        width: 90%;
+        margin: auto;
         .cartList_sell_a{
             text-decoration: none;
             width: 100%;

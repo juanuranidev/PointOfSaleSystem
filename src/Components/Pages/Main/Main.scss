@@ -2,6 +2,9 @@
     display: flex;
     overflow-y: hidden;
     height: 100vh;
+    @media(max-width: 992px){
+        overflow-y: auto;
+    }
     .main_menu{
         display: none;
         justify-content: center;
